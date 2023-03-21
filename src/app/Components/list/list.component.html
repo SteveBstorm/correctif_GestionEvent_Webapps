@@ -1,0 +1,8 @@
+<h3>Liste des évènements</h3>
+<ul>
+  <li *ngFor="let e of events; let i = index">
+    <a [routerLink]="['../detail', i]">{{e.name}}</a>
+  </li>
+</ul>
+
+<a routerLink="../detail/10">test guard</a>

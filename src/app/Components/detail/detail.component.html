@@ -1,0 +1,16 @@
+<h4>{{currentEvent.name}}</h4>
+<p>Début : {{currentEvent.start_date}}</p>
+<p>Fin : {{currentEvent.end_date}}</p>
+<div *ngIf="!currentEvent.is_all_day">
+  <p>Heure début : {{currentEvent.start_time}}</p>
+  <p>Heure fin : {{currentEvent.end_time}}</p>
+</div>
+<p *ngIf="currentEvent.place">{{currentEvent.place}}</p>
+
+<ul *ngIf="currentEvent.participants">
+  <li *ngFor="let p of currentEvent.participants">
+    <p>Nom : {{p.last_name}}</p>
+    <p>Prénom : {{p.first_name}}</p>
+    <p>Email : {{p.email}}</p>
+  </li>
+</ul>
